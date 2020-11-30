@@ -63,7 +63,6 @@ export const News: FC<NewsProps> = memo((props: NewsProps) => {
   useEffect(() => {
     if (symbol) {
       api.GetNewsBy(symbol, interval ?? "3").then((resp) => {
-        console?.log(resp);
         setNews(resp);
       });
     }

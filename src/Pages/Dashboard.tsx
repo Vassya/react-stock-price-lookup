@@ -26,13 +26,16 @@ export const Dashboard: FC<DashboardProps> = memo(
               <SearchBar onSelected={(sym) => setSymbol(sym)} />
             </Container>
           </header>
-          <Container name="bodyCntr" itemsPlacement={ItemsPlacements.Horizontal}>
+          <Container
+            name="bodyCntr"
+            itemsPlacement={ItemsPlacements.Horizontal}
+          >
             <Container
               name="leftPanel"
               style={{ width: "50vw" }}
               itemsPlacement={ItemsPlacements.VerticalStack}
             >
-              {symbol && <StockTable />}
+              {symbol && <StockTable symbol={symbol} />}
             </Container>
             <Container
               name="rightPanel"

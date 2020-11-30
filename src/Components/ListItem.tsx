@@ -32,9 +32,10 @@ const ItemContainer = styled.div<any>`
   height: ${({ height }) => height};
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   cursor: pointer;
   padding: 0.5rem;
+  margin: 1rem;
   transition: 0.1s;
   opacity: 0.8;
   border-color: var(--primary);

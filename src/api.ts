@@ -22,7 +22,7 @@ export default class ApiCalls {
         .catch ((e) => console.log("Stock error GetStockPlayers  : ", { e }));        
     }
 
-    public async GetStockBySymbol(symbol: string): Promise<Stock.IStockData> {
+    /*public async GetStockBySymbol(symbol: string): Promise<Stock.IStockData> {
         const stk = await axios({
             method: "get",
             baseURL: this.apiUrl,
@@ -31,7 +31,7 @@ export default class ApiCalls {
         });
 
         return stk.data;
-    }
+    }*/
 
     public async GetNewsBy(symbol: string, interval: string): Promise<any> {
         const stk = await axios({
@@ -44,11 +44,11 @@ export default class ApiCalls {
         return stk.data;
     }
 
-    public async GetStock(symbol: string): Promise<any> {
+    public async GetStockChart(symbol: string, interval: string): Promise<any> {
         const stk = await axios({
             method: "get",
             baseURL: this.apiUrl,
-            url: `/stock/${symbol}/quote?displayPercent=true&token=${this.token}`,
+            url: `/stock/${symbol}/chart/${interval}?token=${this.token}`,
             responseType: "json"
         });
 
